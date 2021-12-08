@@ -17,5 +17,7 @@ public class GerarOrdenarArquivoMain {
 
         MergeSort ordenarArquivoMerge = new MergeSort("numerosDesordenados104857600.txt");
         ordenarArquivoMerge.ordenar();
+
+        //TODO FUNÇÃO DO TEMPO E GERAR OS ARQUIVOS E TESTAR E MODIFICAR NOME DO ARQUIVO GERADO ORDENADO
     }
 }
