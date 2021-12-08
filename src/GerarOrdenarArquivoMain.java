@@ -6,16 +6,16 @@ import java.io.FileReader;
 
 public class GerarOrdenarArquivoMain {
     public static void main(String[] args) {
-        //GerarArquivo.numerosDesordenados(102300);
+        //GerarArquivo.numerosDesordenados(104857600);
 
         //GerarArquivo.numerosOrdemCrescente(20);
 
         //GerarArquivo.numerosOrdemDecrescente(15);
 
-        InsertionSort ordenarArquivo = new InsertionSort("numerosOrdemDecrescente15.txt");
-        ordenarArquivo.insertionSort();
+/*        InsertionSort ordenarArquivo = new InsertionSort("numerosDesordenados104857600.txt");
+        ordenarArquivo.insertionSort();*/
 
-
-
+        MergeSort ordenarArquivoMerge = new MergeSort("numerosDesordenados104857600.txt");
+        ordenarArquivoMerge.ordenar();
     }
 }
