@@ -8,7 +8,6 @@ package ordenacao;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Random;
 
 public class InsertionSort {
     private static final String ANSI_RESET = "\u001B[0m";
@@ -21,7 +20,7 @@ public class InsertionSort {
         this.caminhoArquivo = arquivo;
     }
 
-    //TODO CALCULAR TEMPO
+
     int aux, j;
     public void insertionSort(){
         ArrayList<String> valores = converteArquivoVetor();
@@ -35,7 +34,6 @@ public class InsertionSort {
             }
             vetor[j+1] = aux;
         }
-        mostrarVetor();
         gerarArquivoOrdenadoInsertion();
     }
 
@@ -44,7 +42,7 @@ public class InsertionSort {
             /*
              Criação do arquivoOrdenado
              */
-            File arquivoOrdenado = new File("numerosOrdenadoInsertion.txt");
+            File arquivoOrdenado = new File(this.caminhoArquivo+"OrdenadoInsertion.txt");
 
             /*
              Criando arquivoOrdenado com tamanho específico
@@ -55,7 +53,6 @@ public class InsertionSort {
             while (i < this.vetor.length) {
                 String valor = this.vetor[i] + " ";
                 rafArquivo.writeBytes(valor);
-                System.out.println(rafArquivo.getFilePointer());
                 i++;
             }
 
@@ -69,11 +66,6 @@ public class InsertionSort {
 
     }
 
-    public void mostrarVetor(){
-        for (int i = 0; i < vetor.length; i++) {
-            System.out.println("O valor no indice " + i + "º é: " + vetor[i]);
-        }
-    }
 
     public int[] getVetor() {
         return vetor;

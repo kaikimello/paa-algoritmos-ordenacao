@@ -3,7 +3,6 @@ package ordenacao;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Random;
 
 public class MergeSort{
 
@@ -38,22 +37,6 @@ public class MergeSort{
         this.vetor = vetor;
     }
 
-    /*public int[] gerarVetor(int tamanho) {
-        vetor = new int[tamanho];
-        Random gerador = new Random();
-
-        for (int i = 0; i < tamanho; i++) {
-            vetor[i] = gerador.nextInt(100);
-        }
-        System.out.println("Números do vetor: ");
-        return vetor;
-    }*/
-
-    public void mostrarVetor() {
-        for (int i = 0; i < vetor.length; i++) {
-            System.out.println("O valor no indice " + i + "º é: " + vetor[i]);
-        }
-    }
 
     public void mergeSortCrescente(int[] vetor, int[] vetorAux, int inicio, int fim) {
         if (inicio < fim) {
@@ -86,7 +69,6 @@ public class MergeSort{
         setVetorAux(vetorAux);
         setVetor(this.vetor);
         mergeSortCrescente(this.vetor, getVetorAux(), 0, this.vetor.length - 1);
-        System.out.println("vetor Ordenado de forma Crescente: ");
         gerarArquivoOrdenadoMerge();
     }
 
@@ -95,7 +77,7 @@ public class MergeSort{
             /*
              Criação do arquivoOrdenado
              */
-            File arquivoOrdenado = new File("numerosOrdenadoMerge.txt");
+            File arquivoOrdenado = new File(this.caminhoArquivo+"OrdenadoMerge.txt");
 
             /*
              Criando arquivoOrdenado com tamanho específico
@@ -106,7 +88,6 @@ public class MergeSort{
             while (i < this.vetor.length) {
                 String valor = this.vetor[i] + " ";
                 rafArquivo.writeBytes(valor);
-                System.out.println(rafArquivo.getFilePointer());
                 i++;
             }
 

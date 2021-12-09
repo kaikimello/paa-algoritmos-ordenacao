@@ -85,8 +85,7 @@ public class GerarArquivo {
             RandomAccessFile rafArquivo = new RandomAccessFile(arquivo, "rw");
             rafArquivo.setLength(tamanhoEmBytes);
 
-            //TODO MUDAR PARA 500000
-            int valor = 50;
+            int valor = 500000;
             do {
                 String texto = valor + " ";
                 rafArquivo.writeBytes(texto);
